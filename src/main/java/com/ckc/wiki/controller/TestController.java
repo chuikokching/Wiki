@@ -1,9 +1,6 @@
 package com.ckc.wiki.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /*@Controller 返回页面*/
@@ -14,6 +11,7 @@ public class TestController {
 
     /**
      * @RequestMapping(value = "/hello", method = RequestMethod.GET)
+     * @RequestMapping("/hello") 支持所有访问方式
      * @GetMapping
      * @PostMapping
      * @PutMapping
@@ -22,7 +20,7 @@ public class TestController {
      * @return
      */
 
-    @RequestMapping("/hello") //支持所有访问方式
+    @GetMapping("/hello")
     public String hello()
     {
         return "Hello World!";
