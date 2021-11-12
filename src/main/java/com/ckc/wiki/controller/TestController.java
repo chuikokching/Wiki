@@ -1,5 +1,6 @@
 package com.ckc.wiki.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     /*Hello Interface Implementation*/
+
+    @Value("${test.name:CHUIKOKCHING}") //优先读配置项,没有则读取默认值
+    private String testname;
 
     /**
      * @RequestMapping(value = "/hello", method = RequestMethod.GET)
@@ -25,12 +29,13 @@ public class TestController {
     public String hello()
     {
 
-        return "Hello World!";
+        return "Hello World!"+testname;
     }
 
     @PostMapping("/hello/post")
     public String helloPost(String name)
     {
+        //参数name要与post请求中的参数名字相同
         return "Hello World! Post "+name;
     }
 }
