@@ -1,6 +1,7 @@
 package com.ckc.wiki.controller;
 
 import com.ckc.wiki.domain.Ebook;
+import com.ckc.wiki.resp.CommonResp;
 import com.ckc.wiki.service.EbookService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,8 +21,11 @@ public class EbookController {
     private EbookService ebookService;
 
     @GetMapping("/list")
-    public List<Ebook> list()
-    {
-        return ebookService.list();
+    public CommonResp list()
+    {   //泛型json对象
+        CommonResp<List<Ebook>> resp=new CommonResp<>();
+        List<Ebook> list = ebookService.list();
+        resp.setContent(list);
+        return resp;
     }
 }
