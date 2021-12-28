@@ -2,7 +2,7 @@
   <a-layout>
     <the-header></the-header> <!--名字和the-header.vue里面的defineComponent.name一样-->
     <router-view/>
-    <the-footer></the-footer>
+    <the-footer></the-footer> <!--名字和the-footer.vue里面的defineComponent.name一样-->
   </a-layout>
 </template>
 
