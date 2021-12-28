@@ -23,7 +23,7 @@ public class EbookService {
         EbookExample.Criteria criteria = ebookExample.createCriteria();
 
         criteria.andNameLike("%"+req.getName()+"%");
-        //criteria.andDescriptionLike("%"+req.getName()+"%");
+        //criteria.andDescriptionLike("%"+req.getDescription()+"%");
 
         List<Ebook> ebookList  = ebookMapper.selectByExample(ebookExample);
 

@@ -30,4 +30,13 @@ public class EbookController {
         resp.setContent(list);
         return resp;
     }
+
+    @GetMapping("/Hello")
+    /*假如uri中参数过多,避免臃肿,将所有参数封装成一个类*/
+    public CommonResp list()
+    {
+        CommonResp<String> resp=new CommonResp<>();
+        resp.setContent("Tech oktupus saves the world!!");
+        return resp;
+    }
 }
