@@ -2,3 +2,9 @@ GET http://localhost:8880/ebook/list?name=Mysql
 
 
 ###
+
+GET http://localhost:8880/ebook/list
+
+
+###
+
