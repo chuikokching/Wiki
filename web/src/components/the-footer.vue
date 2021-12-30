@@ -1,6 +1,6 @@
 <template>
     <a-layout-footer style="text-align: center">
-        Copyright ©2021 Created by ChuiKokChing
+        <b>Copyright</b> ©2021 Created by chuikokching
     </a-layout-footer>
 </template>
 
@@ -11,3 +11,13 @@
         name: 'the-footer'
     });
 </script>
+
+<style scoped>
+    .ant-layout-footer {
+        bottom: 0;
+        width: 100%;
+        position: fixed;
+
+    }
+
+</style>
