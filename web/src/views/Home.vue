@@ -124,8 +124,8 @@
 
         //初始化逻辑都放到onMounted里面, setup放参数定义,方法定义
         onMounted(()=>{
-            console.log("onMounted");
-            axios.get("http://localhost:8880/ebook/list").then((response)=>{
+            console.log("onMounted111");
+            axios.get(process.env.VUE_APP_SERVER+"/ebook/list").then((response)=>{
                 const data = response.data;
                 ebooks.value = data.content;
                 ebook.book = data.content;
