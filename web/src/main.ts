@@ -10,9 +10,34 @@ import axios from 'axios';
 
 axios.defaults.baseURL = process.env.VUE_APP_SERVER;
 
+
+/*
+* axios拦截器 打印日志
+*
+* */
+
+axios.interceptors.request.use(function (request) {
+    console.log('请求参数:', request);
+    return request;
+}, error => {
+    return Promise.reject(error);
+});
+
+axios.interceptors.response.use(function (response) {
+    console.log('返回结果:', response);
+    return response;
+
+}, error => {
+    console.log('返回错误:', error);
+    return Promise.reject(error);
+});
+
+
 const app = createApp(App);
 
 app.use(Antd).use(store).use(router).mount('#app');
+
+
 
 //引入全部图标
 const icons : any = Icons;

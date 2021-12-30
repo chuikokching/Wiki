@@ -96,7 +96,6 @@
     export default defineComponent({
         name: 'Home',
         setup(){
-        console.log("setup");
         const ebooks = ref(); //响应式数据
         const ebook = reactive({book:[]}); //里面存放json对象,book才是响应式变量
 
@@ -124,12 +123,10 @@
 
         //初始化逻辑都放到onMounted里面, setup放参数定义,方法定义
         onMounted(()=>{
-            console.log("onMounted");
             axios.get("/ebook/list").then((response)=>{
                 const data = response.data;
                 ebooks.value = data.content;
                 ebook.book = data.content;
-                console.log(response);
             });
         });
 
