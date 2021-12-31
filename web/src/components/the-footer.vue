@@ -16,6 +16,7 @@
     .ant-layout-footer {
         bottom: 0;
         width: 100%;
+        background-color: #ffffff;
 
 
     }

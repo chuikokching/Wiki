@@ -6,6 +6,11 @@
             <div class="menu">个人站点导航!!!</div>
             <div class="profilebar">个人资料!!!</div>
         </div>
+
+            <div>
+                <a-back-top />
+                <strong style="color: rgba(64, 64, 64, 0.6)"></strong>
+            </div>
         </section>
     </div>
 </template>

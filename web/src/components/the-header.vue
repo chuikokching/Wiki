@@ -1,8 +1,10 @@
 <template>
     <a-layout-header class="header">
-        <div class="logo" />
+        <div class="logo">
+
+        </div>
         <a-menu
-                theme="dark"
+                theme="light"
                 mode="horizontal"
                 v-model:selectedKeys="selectedKeys1"
                 :style="{ lineHeight: '90px', height: '90px'}"
@@ -35,6 +37,17 @@
 
 <style scoped>
     .ant-layout-header{
+        width: 100%;
+
         height: 90px;
+        background-color: #ffffff;
+    }
+
+    .logo {
+        float: left;
+        width: 120px;
+        height: 60px;
+        margin: 16px 24px 16px 0;
+        background: #8cc8ff;
     }
 </style>
