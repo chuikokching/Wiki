@@ -33,7 +33,15 @@ axios.interceptors.response.use(function (response) {
 });
 
 
-const app = createApp(App);
+// new Vue({
+//     router,
+//     store,
+//     Antd,
+//     render:h =>  h(App)
+// }).$mount('#app')
+
+const app = createApp(App)
+
 
 app.use(Antd).use(store).use(router).mount('#app');
 

@@ -17,8 +17,7 @@
         bottom: 0;
         width: 100%;
         background-color: #ffffff;
-
-
+        left:0;
     }
 
 </style>

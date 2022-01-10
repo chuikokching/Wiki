@@ -99,29 +99,28 @@
         const ebooks = ref(); //响应式数据
         const ebook = reactive({book:[]}); //里面存放json对象,book才是响应式变量
 
-            const pagination = {
-                onChange: (page : any) => {
-                    console.log(page);
-                },
-                pageSize: 3,
-            };
-            const actions = [
-                {
-                    type: 'StarOutlined',
-                    text: '156',
-                },
-                {
-                    type: 'LikeOutlined',
-                    text: '156',
-                },
-                {
-                    type: 'MessageOutlined',
-                    text: '2',
-                },
-            ];
+        const pagination = {
+            onChange: (page : any) => {
+                console.log(page);
+            },
+            pageSize: 3,
+        };
+        const actions = [
+            {
+                type: 'StarOutlined',
+                text: '156',
+            },
+            {
+                type: 'LikeOutlined',
+                text: '156',
+            },
+            {
+                type: 'MessageOutlined',
+                text: '2',
+            },
+        ];
 
-
-        //初始化逻辑都放到onMounted里面, setup放参数定义,方法定义
+        //初始化逻辑都放到onMounted里面, setup里放参数和方法的定义
         onMounted(()=>{
             axios.get("/ebook/list").then((response)=>{
                 const data = response.data;
@@ -130,13 +129,14 @@
             });
         });
 
-            return {
-                ebooks,
-                books: toRef(ebook,"book"),
-                listData,
-                pagination,
-                actions}  //这里面的books是随便起的名字
+        return {
+            ebooks,
+            books: toRef(ebook,"book"), //这里面的books是随便起的名字
+            listData,
+            pagination,
+            actions
         }
+    }
 
 });
 </script>
