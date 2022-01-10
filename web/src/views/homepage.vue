@@ -1,11 +1,6 @@
 <template>
     <div class="homepage">
         <section>
-        <!--<div class="page">-->
-            <!--<video src="../../public/video/22222.mp4" loop="loop" type="video/mp4" autoplay="autoplay"></video>-->
-        <!--</div>-->
-
-
 
         <div class="v1">
             <video src="../../public/video/22222.mp4" loop="loop" type="video/mp4" autoplay="autoplay"></video>
@@ -54,7 +49,7 @@
     }
 
     .content{
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         display: flex;
         align-items: center;
@@ -150,7 +145,6 @@
     }
 
     /*--*/
-
 
     .main{
         float: left;
