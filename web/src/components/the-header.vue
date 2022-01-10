@@ -13,7 +13,7 @@
                 :style="{ lineHeight: '90px', height: '90px'}"
         >
             <a-menu-item key="homepage">
-                <router-link to="/"> 首页</router-link>
+                <router-link to="/">首页</router-link>
             </a-menu-item>
             <a-menu-item key="aboutme">
                 <router-link to="/about">关于我</router-link>
