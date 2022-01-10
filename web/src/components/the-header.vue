@@ -28,7 +28,6 @@
             </a-menu-item>
         </a-menu>
 
-
     </div>
 
         <!--<div class="test">测试模块</div>-->
@@ -37,7 +36,6 @@
 
 <script lang="ts">
     import {defineComponent} from 'vue';
-
 
     export default defineComponent({
         name: 'the-header',

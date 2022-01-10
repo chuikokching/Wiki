@@ -1,10 +1,10 @@
 <template>
 
-  <the-header></the-header>
+    <the-header></the-header>
     <the-sidebar></the-sidebar>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+    <div class="blog">
+        <h1>This is a blog page.</h1>
+    </div>
 </template>
 
 <script lang="ts">

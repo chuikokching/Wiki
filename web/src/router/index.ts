@@ -3,6 +3,10 @@ import Home from '../views/homepage.vue'
 import About from '../views/about.vue'
 import AdminEbook from '../views/admin/admin-ebook.vue'
 import Ebook from '../views/ebook.vue'
+import Contact from '../views/contact.vue'
+import Blog from '../views/blog.vue'
+import Album from '../views/album.vue'
+import Work from '../views/work.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -28,6 +32,29 @@ const routes: Array<RouteRecordRaw> = [
         path: '/ebook',
         name: 'Ebook',
         component: Ebook
+    },
+    {
+        path: '/contact',
+        name: 'Contact',
+        component: Contact
+    }
+    ,
+    {
+        path: '/blog',
+        name: 'Blog',
+        component: Blog
+    }
+    ,
+    {
+        path: '/album',
+        name: 'Album',
+        component: Album
+    }
+    ,
+    {
+        path: '/work',
+        name: 'Work',
+        component: Work
     }
 ]
 

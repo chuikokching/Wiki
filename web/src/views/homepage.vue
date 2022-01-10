@@ -1,4 +1,5 @@
 <template>
+    <the-sidebar></the-sidebar>
     <div class="homepage">
         <section>
 
@@ -25,20 +26,6 @@
             </div>
         </div>
 
-        <div class="main">
-            <li style="--l:20%"><router-link to="/">首页</router-link></li>
-            <li style="--l:30%"><router-link to="/about">文档</router-link></li>
-            <li style="--l:40%"><router-link to="/about">相册</router-link></li>
-            <li style="--l:50%"><router-link to="/about">作品</router-link></li>
-            <li style="--l:60%"><router-link to="/ebook">知识库</router-link></li>
-            <li style="--l:70%"><router-link to="/about">关于我</router-link></li>
-            <li style="--l:80%"><router-link to="/about">联系我</router-link></li>
-            <div class="top"></div>
-            <div class="middle"></div>
-            <div class="bottom"></div>
-        </div>
-
-
         <div class="maincontainer">
             <div class="menu">个人站点导航!!!</div>
             <div class="profilebar">个人资料!!!</div>
@@ -52,6 +39,18 @@
     </div>
 </template>
 
+<script lang="ts">
+    import {defineComponent} from 'vue';
+    import TheSidebar from '@/components/the-sidebar.vue';
+
+
+    export default defineComponent({
+        name: 'app',
+        components:{
+            TheSidebar
+        }
+    });
+</script>
 
 <style scoped>
 

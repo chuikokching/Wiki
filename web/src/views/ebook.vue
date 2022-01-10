@@ -1,4 +1,7 @@
 <template>
+
+  <the-header></the-header>
+  <the-sidebar></the-sidebar>
   <a-layout>
 
     <a-layout-sider width="200" style="background: #fff">
@@ -77,6 +80,8 @@
 <script lang="ts">
     import {defineComponent, onMounted, reactive, ref, toRef} from 'vue';
     import axios from 'axios';
+    import TheHeader from '@/components/the-header.vue';
+    import TheSidebar from '@/components/the-sidebar.vue';
 
     const listData : any = [];
 
@@ -95,6 +100,9 @@
 
     export default defineComponent({
         name: 'Home',
+        components:{
+            TheHeader,TheSidebar
+        },
         setup(){
         const ebooks = ref(); //响应式数据
         const ebook = reactive({book:[]}); //里面存放json对象,book才是响应式变量
