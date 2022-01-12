@@ -5,7 +5,7 @@
 
             <div class="top">
                 <div class="logo-details">
-                    <span class="logo_name"><DingtalkOutlined />HomePage</span>
+                    <span class="logo_name"><DingtalkOutlined />Jeff's HomePage</span>
                 </div>
                 <div class="media-icons">
                     <!--<div class="top:10px" color="#ffffff">关注我</div>-->
@@ -23,7 +23,7 @@
 
             <div class="link-boxes">
                 <ul class="box">
-                    <li class="link_name">快捷链接</li>
+                    <li class="link_name"><HomeOutlined :style="{fontSize: '130%'}"/><b>快捷链接</b></li>
                     <li><router-link to="/">首页</router-link></li>
                     <li><router-link to="/blog">文档</router-link></li>
                     <li><router-link to="/album">相册</router-link></li>
@@ -33,7 +33,7 @@
                     <li><router-link to="/contact">联系我</router-link></li>
                 </ul>
                 <ul class="box">
-                    <li class="link_name">所用技术链接</li>
+                    <li class="link_name"><RocketOutlined :style="{fontSize: '140%'}"/><b>所用技术链接</b></li>
                     <li><a href="https://v3.vuejs.org/guide/introduction.html">
                         <svg t="1641985892875" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2714" width="200" height="200"><path d="M615.6 123.6h165.5L512 589.7 242.9 123.6H63.5L512 900.4l448.5-776.9z" fill="#41B883" p-id="2715"></path><path d="M781.1 123.6H615.6L512 303 408.4 123.6H242.9L512 589.7z" fill="#34495E" p-id="2716"></path></svg></a></li>
                     <li><a href="https://2x.antdv.com/docs/vue/introduce/">
@@ -45,23 +45,12 @@
 
                 </ul>
                 <ul class="box">
-                    <li class="link_name">微信好友申请</li>
+                    <li class="link_name"><WechatOutlined :style="{fontSize: '130%'}"/><b>微信好友</b></li>
                     <li><a>Avatar</a></li>
 
                 </ul>
             </div>
         </div>
-
-        <!--<div class="subscription">-->
-            <!--<ul>-->
-                <!--<li><b>关注我</b></li>-->
-                <!--<li><a href="https://space.bilibili.com/5915471?spm_id_from=333.1007.0.0">Bilibili</a></li>-->
-                <!--<li><a href="https://github.com/chuikokching"><div><GithubOutlined /></div></a></li>-->
-            <!--<li><a>Facebook</a></li>-->
-            <!--<li><a>Youtube</a></li>-->
-            <!--</ul>-->
-        <!--</div>-->
-
 
     </a-layout-footer>
 
@@ -78,6 +67,9 @@
         DingtalkOutlined,
         FacebookOutlined,
         GithubOutlined,
+        HomeOutlined,
+        RocketOutlined,
+        WechatOutlined,
         YoutubeOutlined
     } from '@ant-design/icons-vue';
 
@@ -94,6 +86,9 @@
             DingtalkOutlined,
             YoutubeOutlined,
             FacebookOutlined,
+            WechatOutlined,
+            RocketOutlined,
+            HomeOutlined,
         }
     });
 </script>
@@ -162,7 +157,7 @@
 
     .content .top .logo-details{
         color: #fff;
-        font-size: 30px;
+        font-size: 35px;
     }
 
     .content .top .media-icons{
@@ -191,7 +186,7 @@
 
     .link-boxes .box .link_name{
         color: #ffffff;
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 400;
         margin-bottom: 10px;
         position: relative;
@@ -208,13 +203,13 @@
     }
 
     .link-boxes .box li{
-        margin: 6px 0;
+        margin: 8px 0 0 0;
         list-style: none;
     }
 
     .link-boxes .box li a{
         color: #ffffff;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 400;
         text-decoration: none;
         opacity: 0.8;
@@ -274,9 +269,6 @@
         height: 400px;
     }
 
-    .subscription{
-        font-size: 14px;
-    }
 
     .copyright{
         width: 100%;
