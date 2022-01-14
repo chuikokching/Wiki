@@ -14,7 +14,7 @@
         </template>
         <template v-slot:action="{ text, record }">
             <a-space size="small">
-                <a-button type="primary">
+                <a-button type="primary" @click="edit(record)">
                     编辑
                 </a-button>
                 <a-button type="danger">
@@ -24,6 +24,29 @@
         </template>
     </a-table>
 
+    <a-modal v-model:visible="modalVisible" title="知识库表单" @ok="handleModalOk">
+        <template #footer>
+            <a-button key="back" @click="handleCancel">Return</a-button>
+            <a-button key="submit" type="primary" :loading="modalLoading" @click="handleModalOk">Submit</a-button>
+        </template>
+        <a-form :model="ebook" :label-col="{ span: 6 }" :wrapper-col="{ span: 18 }">
+            <a-form-item label="封面">
+                <a-input v-model:value="ebook.cover" />
+            </a-form-item>
+            <a-form-item label="名称">
+                <a-input v-model:value="ebook.name" />
+            </a-form-item>
+            <a-form-item label="分类一">
+                <a-input v-model:value="ebook.category1Id" />
+            </a-form-item>
+            <a-form-item label="分类二">
+                <a-input v-model:value="ebook.category2Id" />
+            </a-form-item>
+            <a-form-item label="描述">
+                <a-input v-model:value="ebook.desc" type="textarea" />
+            </a-form-item>
+        </a-form>
+    </a-modal>
 
 </template>
 
@@ -39,6 +62,28 @@
             TheHeader
         },
         setup() {
+
+            //==========表单=============
+            const ebook = ref({});
+            const modalLoading = ref(false);
+            const modalVisible = ref(false);
+            const edit = (record: any) => {
+                modalVisible.value = true;
+                ebook.value=record;
+            };
+
+            const handleModalOk = () => {
+                modalLoading.value = true;
+                setTimeout(() => {
+                    modalLoading.value = false;
+                    modalVisible.value = false;
+                }, 2000);
+            };
+
+            const handleCancel = () => {
+                modalVisible.value = false;
+            };
+
             const ebooks = ref();
             const pagination = ref({
                 current: 1, //当前页
@@ -129,7 +174,13 @@
                 pagination,
                 columns,
                 loading,
-                handleTableChange
+                handleTableChange,
+                modalVisible,
+                modalLoading,
+                handleCancel,
+                handleModalOk,
+                edit,
+                ebook,
             }
         }
     });

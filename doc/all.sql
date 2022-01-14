@@ -17,6 +17,17 @@ insert into `ebook` (id, name, description) values (2, 'Vue 入门教程', '零�
 insert into `ebook` (id, name, description) values (3, 'Python 入门教程', '零基础入门 Python 开发，企业级应用开发最佳首选框架');
 insert into `ebook` (id, name, description) values (4, 'Mysql 入门教程', '零基础入门 Mysql 开发，企业级应用开发最佳首选框架');
 insert into `ebook` (id, name, description) values (5, 'Oracle 入门教程', '零基础入门 Oracle 开发，企业级应用开发最佳首选框架');
+insert into `ebook` (id, name, description) values (6, 'React 入门教程', '零基础入门 React 开发，企业级应用开发最佳首选框架');
+insert into `ebook` (id, name, description) values (7, 'Go 入门教程', '零基础入门 Go 开发，企业级应用开发最佳首选框架');
+insert into `ebook` (id, name, description) values (8, 'html 入门教程', '零基础入门 html 开发，企业级应用开发最佳首选框架');
+insert into `ebook` (id, name, description) values (9, 'css 入门教程', '零基础入门 css 开发，企业级应用开发最佳首选框架');
+insert into `ebook` (id, name, description) values (10, 'mongo 入门教程', '零基础入门 mongo 开发，企业级应用开发最佳首选框架');
+insert into `ebook` (id, name, description) values (11, 'Nginx 入门教程', '零基础入门 Nginx 开发，企业级应用开发最佳首选框架');
+
+update  `ebook` set cover='/image/cover1.png' where id=1;
+update  `ebook` set cover='/image/cover2.png' where id=2;
+update  `ebook` set cover='/image/cover2.png' where id=2;
+update  `ebook` set category1_id=1,category2_id=2 where id=2;
 
 select * from ebook;
 

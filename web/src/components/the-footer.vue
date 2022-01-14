@@ -8,7 +8,7 @@
                     <span class="logo_name"><DingtalkOutlined />Jeff's HomePage</span>
                 </div>
                 <div class="media-icons">
-                    <!--<div class="top:10px" color="#ffffff">关注我</div>-->
+
                     <a >关注我</a>
                     <a href="https://github.com/chuikokching"><GithubOutlined :style="{fontSize: '300%'}"/></a>
                     <a href="https://www.youtube.com/channel/UCRXMLjOfF93sfSfHcYH_e8w"><YoutubeOutlined :style="{fontSize: '300%'}"/></a>
