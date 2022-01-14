@@ -32,13 +32,6 @@
     import TheHeader from '@/components/the-header.vue';
     import axios from 'axios';
 
-    // export default defineComponent({
-    //     name: 'AdminEbook',
-    //     components:{
-    //         TheHeader,TheSidebar
-    //     },
-    //
-    // });
 
     export default defineComponent({
         name: 'AdminEbook',
@@ -49,7 +42,7 @@
             const ebooks = ref();
             const pagination = ref({
                 current: 1, //当前页
-                pageSize: 3, //每页条数
+                pageSize: 4, //每页条数
                 total: 0
             });
             const loading = ref(false);
@@ -95,15 +88,21 @@
             /**
              * 数据查询
              **/
-            const handleQuery = (params: any) => {
+            const handleQuery = (p: any) => {
                 loading.value = true;
-                axios.get("/ebook/list", params).then((response) => {
+                axios.get("/ebook/list", {
+                    params: {
+                        page:p.page,
+                        size:p.size
+                    }
+                }).then((response) => {
                     loading.value = false;
                     const data = response.data;
-                    ebooks.value = data.content;
-                    console.log("调用一次axios！！！")
+                    ebooks.value = data.content.list;
+
                     // 重置分页按钮
-                    pagination.value.current = params.page;
+                    pagination.value.current = p.page;
+                    pagination.value.total = data.content.total;
                 });
             };
 
@@ -119,7 +118,10 @@
             };
 
             onMounted(() => {
-                handleQuery({});
+                handleQuery({
+                    page:1,
+                    size:pagination.value.pageSize,
+                });
             });
 
             return {

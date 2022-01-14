@@ -10,7 +10,7 @@
                 theme="light"
                 mode="horizontal"
                 v-model:selectedKeys="selectedKeys1"
-                :style="{ lineHeight: '90px', height: '90px'}"
+                :style="{ lineHeight: '90px', height: '94px'}"
         >
             <a-menu-item key="homepage">
                 <router-link to="/">首页</router-link>
@@ -29,7 +29,7 @@
         </a-menu>
 
     </div>
-
+    <a-divider type="horizontal" />
         <!--<div class="test">测试模块</div>-->
     </a-layout-header>
 </template>
@@ -48,11 +48,18 @@
     .ant-layout-header{
         width: 100%;
         padding: 0px;
-        height: 90px;
+        height: 91px;
         background-color: #ffffff;
         z-index:300;
     }
 
+    .ant-divider-horizontal {
+        display: flex;
+        clear: both;
+        width: 100%;
+        min-width: 100%;
+        margin: 0;
+    }
 
     .logo{
         float: left;
