@@ -5,6 +5,7 @@ import com.ckc.wiki.domain.EbookExample;
 import com.ckc.wiki.mapper.EbookMapper;
 import com.ckc.wiki.req.EbookReq;
 import com.ckc.wiki.resp.EbookResp;
+import com.ckc.wiki.resp.PageResp;
 import com.ckc.wiki.util.CopyUtil;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -25,7 +26,7 @@ public class EbookService {
 
     private static final Logger LOG = LoggerFactory.getLogger(EbookService.class);
 
-    public List<EbookResp> list(EbookReq req){
+    public PageResp<EbookResp> list(EbookReq req){
 
 
 
@@ -46,7 +47,7 @@ public class EbookService {
         // @param: pageNum,pageSize,
         // @return: ebookList,pageInfo.getTotal(总行数)
 
-        PageHelper.startPage(1,3);
+        PageHelper.startPage(req.getPage(),req.getSize());
         List<Ebook> ebookList  = ebookMapper.selectByExample(ebookExample);
 
         PageInfo<Ebook> pageInfo = new PageInfo<>(ebookList);
@@ -66,8 +67,14 @@ public class EbookService {
 //            respList.add(copy);
 //        }
 
-        //List<EbookResp> list = CopyUtil.copyList(ebookList,EbookResp.class);
 
-        return CopyUtil.copyList(ebookList,EbookResp.class);
+
+        List<EbookResp> list = CopyUtil.copyList(ebookList,EbookResp.class);
+
+        PageResp<EbookResp> plist = new PageResp();
+        plist.setTotal(pageInfo.getTotal());
+        plist.setList(list);
+
+        return plist;
     }
 }
