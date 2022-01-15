@@ -3,8 +3,9 @@ package com.ckc.wiki.service;
 import com.ckc.wiki.domain.Ebook;
 import com.ckc.wiki.domain.EbookExample;
 import com.ckc.wiki.mapper.EbookMapper;
-import com.ckc.wiki.req.EbookReq;
-import com.ckc.wiki.resp.EbookResp;
+import com.ckc.wiki.req.EbookQueryReq;
+import com.ckc.wiki.req.EbookSaveReq;
+import com.ckc.wiki.resp.EbookQueryResp;
 import com.ckc.wiki.resp.PageResp;
 import com.ckc.wiki.util.CopyUtil;
 import com.github.pagehelper.PageHelper;
@@ -26,7 +27,7 @@ public class EbookService {
 
     private static final Logger LOG = LoggerFactory.getLogger(EbookService.class);
 
-    public PageResp<EbookResp> list(EbookReq req){
+    public PageResp<EbookQueryResp> list(EbookQueryReq req){
 
 
 
@@ -69,12 +70,29 @@ public class EbookService {
 
 
 
-        List<EbookResp> list = CopyUtil.copyList(ebookList,EbookResp.class);
+        List<EbookQueryResp> list = CopyUtil.copyList(ebookList, EbookQueryResp.class);
 
-        PageResp<EbookResp> plist = new PageResp();
+        PageResp<EbookQueryResp> plist = new PageResp();
         plist.setTotal(pageInfo.getTotal());
         plist.setList(list);
 
         return plist;
+    }
+
+    /*
+    * 保存
+    *
+    * */
+    public void save(EbookSaveReq req){
+
+        Ebook ebook = CopyUtil.copy(req, Ebook.class);
+
+        if(ObjectUtils.isEmpty(req.getId()))
+        {
+            //id爲空,新增記錄
+            ebookMapper.insert(ebook);
+        }
+        else ebookMapper.updateByPrimaryKey(ebook);
+
     }
 }

@@ -1,6 +1,6 @@
-package com.ckc.wiki.resp;
+package com.ckc.wiki.req;
 
-public class EbookResp {
+public class EbookSaveReq {
     private Long id;
 
     private String name;
